@@ -5,30 +5,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "HOTEL")
+@Table(name = "CONTINENT")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class HotelEntity {
+public class ContinentEntity {
 
     @Column
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column
     private String name;
 
-    @Column(name = "star_standard")
-    private Byte starStandard;
-
-    @Column
-    private String description;
-
-
-    @ManyToOne
-    @JoinColumn (name="city_id" , nullable = false)
-    private CityEntity city;
+    @OneToMany(mappedBy = "continent")
+    private Set<CountryEntity> countrys = new HashSet<>();
 }
