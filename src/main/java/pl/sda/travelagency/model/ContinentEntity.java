@@ -25,4 +25,8 @@ public class ContinentEntity {
 
     @OneToMany(mappedBy = "continent")
     private Set<CountryEntity> countrys = new HashSet<>();
+
+    public ContinentEntity(String name) {
+        this.name = name;
+    }
 }

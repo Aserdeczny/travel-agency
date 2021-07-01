@@ -28,4 +28,7 @@ public class CityEntity {
 
     @OneToMany(mappedBy = "city")
     private Set<HotelEntity> hotels = new HashSet<>();
+
+    @OneToMany(mappedBy = "cityEntity")
+    private Set<AirportEntity> airports = new HashSet<>();
 }

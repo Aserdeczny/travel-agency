@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "HOTEL")
@@ -31,4 +33,7 @@ public class HotelEntity {
     @ManyToOne
     @JoinColumn (name="city_id" , nullable = false)
     private CityEntity city;
+
+    @OneToMany(mappedBy = "hotelEntity")
+    private Set<TravelEntity> travels = new HashSet<>();
 }
