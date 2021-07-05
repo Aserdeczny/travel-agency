@@ -86,7 +86,7 @@
                 <artifactId>appengine-maven-plugin</artifactId>
                 <version>2.4.0</version>
                 <configuration>
-                    <projectId>gifted-decker-318918</projectId>
+                    <projectId>travel-agency</projectId>
                     <version>1</version>
                 </configuration>
             </plugin>
