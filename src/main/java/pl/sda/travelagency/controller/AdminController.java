@@ -9,7 +9,7 @@ public class AdminController {
 
     @RequestMapping(value = {"/addTrip"}, method = RequestMethod.GET)
     public String getAddTrip() {
-        return "admin/addTripPL";
+        return "addTripPL";
     }
 
     /*@RequestMapping(value = {"/addTrip"}, method = RequestMethod.POST)
