@@ -1,4 +1,7 @@
 steps:
+  - name: maven:3-jdk-8
+    entrypoint: mvn
+    args: [ 'test' ]
   - name: gcr.io/k8s-skaffold/pack
     args:
       - build
