@@ -1,4 +1,11 @@
 package pl.sda.travelagency.repository;
 
-public interface HotelRepository {
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import pl.sda.travelagency.model.HotelEntity;
+
+@Repository
+public interface HotelRepository extends JpaRepository<HotelEntity, Long> {
+
 }
