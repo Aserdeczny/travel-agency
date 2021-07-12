@@ -31,7 +31,6 @@ public class AdminController {
     @GetMapping("/addTrip")
     public String getAddTrip(Model model) {
 
-
         List<ContinentEntity> listOfContinents = continentService.listAllContinents();
         List<CountryEntity> listOfCountrys = countryService.listAllCountrys();
         List<AirportEntity> listOfAirports = airportService.listAllAirports();
