@@ -16,7 +16,7 @@
                 <li class="nav-item-icon"><a href="search.html" class="nav-link"><span class="material-icons">
 								travel_explore
 							</span>Wyszukiwarka</a></li>
-                <li class="nav-item-icon"><a href="login.html" class="nav-link"><span class="material-icons">
+                <li class="nav-item-icon"><a href="/login" class="nav-link"><span class="material-icons">
 								account_circle
 							</span>Zaloguj się</a></li>
                 <li class="nav-item-icon"><a href="admin.html" class="nav-link"><span class="material-icons">
