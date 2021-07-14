@@ -15,4 +15,9 @@ public class LoginRegister {
     public String getRegister(){
         return "LoginPages/register";
     }
+
+    @RequestMapping(value = "/register",method = RequestMethod.POST)
+    public String register(){
+        return "LoginPages/login";
+    }
 }
