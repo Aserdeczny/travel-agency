@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <jsp:useBean id="now" class="java.util.Date"/>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@include file="../dynamic/head.jspf"%>
@@ -40,7 +41,7 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Utwórz konto!</h1>
                         </div>
-                        <form class="user">
+                        <form class="user" action="/register" method="post">
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Imię">
@@ -60,14 +61,14 @@
                                     <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Powtórz ">
                                 </div>
                             </div>
-                            <a href="login.jsp" class="btn btn-primary btn-user btn-block">
-                                Rejestruj
-                            </a>
+                            <input type="submit" class="btn btn-primary btn-user btn-block" value="Zarejestruj">
+
+                            </input>
                             <hr>
 
                         </form>
                         <div class="text-center">
-                            <a class="small" href="login.jsp">Masz już konto? Zaloguj się!</a>
+                            <a class="small" href="/login">Masz już konto? Zaloguj się!</a>
                         </div>
                     </div>
                 </div>
