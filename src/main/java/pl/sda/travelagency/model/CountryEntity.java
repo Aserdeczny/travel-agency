@@ -3,6 +3,7 @@ package pl.sda.travelagency.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -11,6 +12,7 @@ import java.util.Set;
 @Entity
 @Table(name = "COUNTRY")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class CountryEntity {
@@ -28,4 +30,9 @@ public class CountryEntity {
 
     @OneToMany (mappedBy = "country")
     private Set<CityEntity> citys = new HashSet<>();
+
+    public CountryEntity(String name, ContinentEntity continent) {
+        this.name = name;
+        this.continent = continent;
+    }
 }
