@@ -1,34 +1,31 @@
-package pl.sda.travelagency.Service;
+package pl.sda.travelagency.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.sda.travelagency.model.AirportEntity;
-import pl.sda.travelagency.model.CityEntity;
 import pl.sda.travelagency.repository.AirportRepository;
 
 import java.util.List;
-
+@RequiredArgsConstructor
 @Service
 public class AirportService {
 
     private final AirportRepository airportRepository;
 
-    public AirportService(AirportRepository airportRepository) {
-        this.airportRepository = airportRepository;
-    }
 
-    public List<AirportEntity> listAllAirports() {
+    public List<AirportEntity> listAll() {
         return airportRepository.findAll();
     }
 
-    public void saveAirport(AirportEntity airport) {
+    public void save(AirportEntity airport) {
         airportRepository.save(airport);
     }
 
-    public AirportEntity getAirportById(Long id) {
+    public AirportEntity getById(Long id) {
         return airportRepository.findById(id).get();
     }
 
-    public void deleteAirPort(Long id) {
+    public void delete(Long id) {
         airportRepository.deleteById(id);
     }
 }

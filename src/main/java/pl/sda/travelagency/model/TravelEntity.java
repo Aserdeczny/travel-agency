@@ -3,6 +3,8 @@ package pl.sda.travelagency.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -10,6 +12,7 @@ import java.util.Date;
 @Entity
 @Table(name = "TRAVEL")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class TravelEntity {
@@ -47,15 +50,25 @@ public class TravelEntity {
     private Byte maxChild;
 
     @ManyToOne
-    @JoinColumn (name="from_airport_id" , nullable = false)
+    @JoinColumn (name="from_airport_id" )
     private AirportEntity fromAirport;
 
     @ManyToOne
-    @JoinColumn (name="to_airport_id" , nullable = false)
+    @JoinColumn (name="to_airport_id" )
     private AirportEntity toAirport;
 
     @ManyToOne
-    @JoinColumn (name="to_hotel_id" , nullable = false)
+    @JoinColumn (name="to_hotel_id" )
     private HotelEntity hotelEntity;
+
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    public Date getFromDate() {
+        return fromDate;
+    }
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    public Date getToDate() {
+        return toDate;
+    }
+
 }
 
