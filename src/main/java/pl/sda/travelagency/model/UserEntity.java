@@ -1,28 +1,33 @@
 package pl.sda.travelagency.model;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserEntity extends BaseEntity {
+
+    @Column
     private String username;
+
+    @Column
     private String password;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-
-    private Set<String> roles= new HashSet<>();
-
-    public UserEntity() {
-    }
-
-    public UserEntity(String username, String password, Set<String> roles) {
-        this.username = username;
-        this.password = password;
-        this.roles = roles;
-    }
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "user_role",
+            joinColumns = { @JoinColumn(name = "USER_ID") },
+            inverseJoinColumns = { @JoinColumn(name = "ROLE_ID") }
+    )
+    private List<UserRoleEntity> roles;
 
     public String getUsername() {
         return username;
@@ -40,11 +45,11 @@ public class UserEntity extends BaseEntity {
         this.password = password;
     }
 
-    public Set<String> getRoles() {
+    public List<UserRoleEntity> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<String> roles) {
+    public void setRoles(List<UserRoleEntity> roles) {
         this.roles = roles;
     }
 }

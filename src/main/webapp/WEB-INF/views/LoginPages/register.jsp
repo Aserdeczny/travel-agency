@@ -51,11 +51,11 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="adres Email">
+                                <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="adres Email" name="username">
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Hasło">
+                                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Hasło" name="password">
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Powtórz ">
