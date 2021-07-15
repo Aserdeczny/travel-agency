@@ -19,7 +19,7 @@
                 <li class="nav-item-icon"><a href="/login" class="nav-link"><span class="material-icons">
 								account_circle
 							</span>Zaloguj się</a></li>
-                <li class="nav-item-icon"><a href="admin.html" class="nav-link"><span class="material-icons">
+                <li class="nav-item-icon"><a href='<c:url value="/travelControllPanel"/>' class="nav-link"><span class="material-icons">
 								admin_panel_settings
 							</span>Admin</a></li>
                 <li class="nav-item cta"><a href='<c:url value="/addTrip"/>' class="nav-link"><span>Dodaj wycieczkę</span></a>

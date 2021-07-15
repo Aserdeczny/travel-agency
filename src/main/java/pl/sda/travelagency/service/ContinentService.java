@@ -1,32 +1,29 @@
-package pl.sda.travelagency.Service;
+package pl.sda.travelagency.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.sda.travelagency.model.ContinentEntity;
 import pl.sda.travelagency.repository.ContinentRepository;
 
 import java.util.List;
-
+@RequiredArgsConstructor
 @Service
 public class ContinentService {
     private final ContinentRepository continentRepository;
 
-    public ContinentService(ContinentRepository continentRepository) {
-        this.continentRepository = continentRepository;
-    }
-
-    public List<ContinentEntity> listAllContinents() {
+    public List<ContinentEntity> listAll() {
         return continentRepository.findAll();
     }
 
-    public void saveContinent(ContinentEntity continent) {
+    public void save(ContinentEntity continent) {
         continentRepository.save(continent);
     }
 
-    public ContinentEntity getContinentById(Long id) {
+    public ContinentEntity getById(Long id) {
         return continentRepository.findById(id).get();
     }
 
-    public void deleteContinent(Long id) {
+    public void delete(Long id) {
         continentRepository.deleteById(id);
     }
 }
