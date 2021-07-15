@@ -75,4 +75,18 @@ public class TripController {
         travelService.save(travel);
         return new RedirectView("/addTrip");
     }
+
+
+    @GetMapping("/travels/{name}")
+    public String getSortedTravelListByContinent(Model model ,@PathVariable("name") String name){
+      List<TravelEntity> sortedList =travelService.findByContinent(name);
+      List<TravelEntity> promotedList =travelService.listOfPromotedByContinentName(name);
+      List<ContinentEntity> continentList = continentService.listAll();
+      String continentName = name;
+      model.addAttribute("continentPage",continentName);
+      model.addAttribute("contients",continentList);
+      model.addAttribute("sortedTravelByContinent",sortedList);
+      model.addAttribute("promotedList",promotedList);
+        return  "/sortedTravels";
+    }
 }
