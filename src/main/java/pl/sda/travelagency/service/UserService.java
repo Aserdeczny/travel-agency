@@ -1,4 +1,4 @@
-package pl.sda.travelagency.Service;
+package pl.sda.travelagency.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
