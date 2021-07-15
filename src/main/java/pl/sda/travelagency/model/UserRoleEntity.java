@@ -1,12 +1,16 @@
 package pl.sda.travelagency.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "ROLE")
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserRoleEntity {
 
     @Id
@@ -16,5 +20,4 @@ public class UserRoleEntity {
 
     @Column
     private UserRoleCode code;
-
 }

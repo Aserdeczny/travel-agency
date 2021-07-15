@@ -10,7 +10,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import pl.sda.travelagency.repository.UserEntityRepository;
 
 import javax.sql.DataSource;
 
@@ -34,10 +33,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //        auth.inMemoryAuthentication().withUser("dba").password("{noop}dba").roles("DBA");
 
         auth.jdbcAuthentication()
-                .usersByUsernameQuery("SELECT u.username, u.password,1 FROM user u WHERE u.username=?")
-                .authoritiesByUsernameQuery("SELECT u.username, r.name, 1 " +
-                        "FROM user u " +
-                        "INNER JOIN user_role ur ON ur.user_id = u.user_id " +
+                .usersByUsernameQuery("SELECT u.username, u.password,1 FROM users u WHERE u.username=?")
+                .authoritiesByUsernameQuery("SELECT u.username, r.code, 1 " +
+                        "FROM users u " +
+                        "INNER JOIN user_role ur ON ur.user_id = u.id " +
                         "INNER JOIN role r ON r.role_id = ur.role_id " +
                         "WHERE u.username=?")
                 .dataSource(dataSource);
