@@ -1,4 +1,4 @@
-package pl.sda.travelagency.Service;
+package pl.sda.travelagency.service;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -39,21 +39,21 @@ class ServiceIT {
     HotelEntity hotel1 = new HotelEntity("Welington", 5L, "fajny",city1);
     @Test
     void saveContinent() {
-        continentService.saveContinent(continent);
-        countryService.saveCountry(country);
-        cityService.saveCity(city);
-        airportService.saveAirport(airport);
-        hotelService.saveHotel(hotel);
+        continentService.save(continent);
+        countryService.save(country);
+        cityService.save(city);
+        airportService.save(airport);
+        hotelService.save(hotel);
 
-        continentService.saveContinent(continent1);
-        countryService.saveCountry(country1);
-        cityService.saveCity(city1);
-        airportService.saveAirport(airport1);
-        hotelService.saveHotel(hotel1);
+        continentService.save(continent1);
+        countryService.save(country1);
+        cityService.save(city1);
+        airportService.save(airport1);
+        hotelService.save(hotel1);
     }
 
     @Test
     void deleteContinent() {
-        continentService.deleteContinent(1L);
+        continentService.delete(1L);
     }
 }
