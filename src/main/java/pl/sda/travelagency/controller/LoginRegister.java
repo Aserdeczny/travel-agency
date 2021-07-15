@@ -6,13 +6,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.sda.travelagency.model.UserEntity;
-import pl.sda.travelagency.repository.UserEntityRepository;
+import pl.sda.travelagency.Service.UserService;
+import pl.sda.travelagency.dto.UserDto;
 
 @Controller
 @RequiredArgsConstructor
 public class LoginRegister {
-    private final UserEntityRepository userEntityRepository;
+    private final UserService userService;
 
     @RequestMapping(value = "/login", method = {RequestMethod.GET, RequestMethod.POST})
     public String getLogin() {
@@ -25,9 +25,9 @@ public class LoginRegister {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String register(@ModelAttribute(name = "user") UserEntity user,
+    public String register(@ModelAttribute(name = "user") UserDto user,
                            Model model) {
-        userEntityRepository.save(user);
+        userService.save(user);
         return "LoginPages/login";
     }
 }
