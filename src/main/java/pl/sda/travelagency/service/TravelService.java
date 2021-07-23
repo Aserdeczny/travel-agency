@@ -48,4 +48,16 @@ public class TravelService {
         );
         travelRepository.save(edited);
     }
+
+    public List<TravelEntity> findByContinent(String name) {
+        return travelRepository.findTravelByContientName(name);
+    }
+
+    public List<TravelEntity> listOfPromoted() {
+        return travelRepository.findPromotedTravels();
+    }
+
+    public List<TravelEntity> listOfPromotedByContinentName(String name) {
+        return travelRepository.findPromotedTravelsByContinent(name);
+    }
 }
